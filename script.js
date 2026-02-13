@@ -25,7 +25,7 @@ function loadStoryData() {
     .then(res => res.json())
     .then(data => {
       storyData = data;
-      currentStory = storyData.stories[0]; // erstes Hörspiel
+      currentStory = storyData.stories[0];
       if (storyData.app && storyData.app.cover_image) {
         coverImg.src = storyData.app.cover_image;
       }
@@ -49,27 +49,30 @@ function loadScene(sceneId) {
   sceneTitle.textContent = scene.title || "";
   bgImg.src = scene.background || storyData.app.default_background || "";
 
-  // Audio laden
-  player.src = scene.narration || "";
-  player.currentTime = 0;
-
-  // Text setzen
-  promptText.textContent = scene.prompt || "";
+  // Prompt verstecken
+  promptText.textContent = "";
+  promptText.style.display = "none";
 
   // Buttons verstecken
   choicesContainer.innerHTML = "";
   choicesContainer.style.display = "none";
 
-  // Audio abspielen
+  // Audio laden
+  player.src = scene.narration || "";
+  player.currentTime = 0;
   player.play();
 
-  // Buttons erst nach Audio-Ende anzeigen
+  // Verhalten nach Audio-Ende
   if (scene.type === "decision") {
     player.onended = () => {
+      promptText.textContent = scene.prompt || "";
+      promptText.style.display = "block";
       showChoices(scene);
     };
   } else if (scene.type === "ending") {
     player.onended = () => {
+      promptText.textContent = scene.ending_title || "";
+      promptText.style.display = "block";
       showEnding(scene);
     };
   }
