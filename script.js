@@ -1,6 +1,7 @@
 let storyData = null;
 let currentStory = null;
 let currentSceneId = null;
+let sceneHistory = [];
 
 const screenCover = document.getElementById("screen-cover");
 const screenSelect = document.getElementById("screen-select");
@@ -9,6 +10,8 @@ const screenStory = document.getElementById("screen-story");
 const btnStart = document.getElementById("btn-start");
 const btnBackCover = document.getElementById("btn-back-cover");
 const btnBackCover2 = document.getElementById("btn-back-cover2");
+const btnBackSelect = document.getElementById("btn-back-select");
+const btnBackOne = document.getElementById("btn-back-one");
 
 const coverImg = document.getElementById("cover-img");
 const bgImg = document.getElementById("bg-img");
@@ -21,6 +24,12 @@ const player = document.getElementById("player");
 function showScreen(screen) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   screen.classList.add("active");
+}
+
+function stopAudio() {
+  player.pause();
+  player.currentTime = 0;
+  player.onended = null;
 }
 
 function loadStoryData() {
@@ -48,6 +57,8 @@ function generateStoryList() {
 }
 
 function startStory() {
+  stopAudio();
+  sceneHistory = [];
   currentSceneId = currentStory.start_scene;
   loadScene(currentSceneId);
   showScreen(screenStory);
@@ -56,6 +67,10 @@ function startStory() {
 function loadScene(sceneId) {
   const scene = currentStory.scenes[sceneId];
   if (!scene) return;
+
+  if (currentSceneId) {
+    sceneHistory.push(currentSceneId);
+  }
 
   currentSceneId = sceneId;
 
@@ -68,8 +83,8 @@ function loadScene(sceneId) {
   choicesContainer.innerHTML = "";
   choicesContainer.style.display = "none";
 
+  stopAudio();
   player.src = scene.narration || "";
-  player.currentTime = 0;
   player.play();
 
   if (scene.type === "decision") {
@@ -115,14 +130,42 @@ function showEnding(scene) {
 
   const btnRestart = document.createElement("button");
   btnRestart.textContent = "Zurück zum Start";
-  btnRestart.onclick = () => showScreen(screenCover);
+  btnRestart.onclick = () => {
+    stopAudio();
+    showScreen(screenCover);
+  };
   choicesContainer.appendChild(btnRestart);
 
   choicesContainer.style.display = "block";
 }
 
-btnStart.addEventListener("click", () => showScreen(screenSelect));
-btnBackCover.addEventListener("click", () => showScreen(screenCover));
-btnBackCover2.addEventListener("click", () => showScreen(screenCover));
+btnStart.addEventListener("click", () => {
+  stopAudio();
+  showScreen(screenSelect);
+});
+
+btnBackCover.addEventListener("click", () => {
+  stopAudio();
+  showScreen(screenCover);
+});
+
+btnBackCover2.addEventListener("click", () => {
+  stopAudio();
+  showScreen(screenCover);
+});
+
+btnBackSelect.addEventListener("click", () => {
+  stopAudio();
+  sceneHistory = [];
+  showScreen(screenSelect);
+});
+
+btnBackOne.addEventListener("click", () => {
+  stopAudio();
+  if (sceneHistory.length > 0) {
+    const previous = sceneHistory.pop();
+    loadScene(previous);
+  }
+});
 
 loadStoryData();
