@@ -2,30 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interaktives Hörspiel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
 
-    <div id="screen-cover" class="screen active">
-      <img id="cover-img" src="images/cover.jpg" alt="Cover">
-      <h1>Interaktives Hörspiel</h1>
-      <button id="btn-start">Start</button>
-    </div>
+  <!-- SCREEN 1: COVER -->
+  <div id="screen-cover" class="screen active">
+    <img id="cover-img" class="cover-image" src="" alt="Cover">
+    <button id="btn-start">Start</button>
+  </div>
 
-    <div id="screen-story" class="screen">
-      <h2 id="scene-title"></h2>
-      <img id="bg-img" src="" alt="Hintergrund">
-      <div id="audio-box">
-        <audio id="player" controls></audio>
-      </div>
-      <p id="prompt-text"></p>
-      <div id="choices"></div>
-      <button id="btn-back-cover">← Zurück zum Start</button>
-    </div>
+  <!-- SCREEN 2: HÖRSPIEL-AUSWAHL -->
+  <div id="screen-select" class="screen">
+    <h1>Wähle ein Hörspiel</h1>
+    <div id="story-list"></div>
+    <button id="btn-back-cover2">Zurück</button>
+  </div>
 
+  <!-- SCREEN 3: STORY -->
+  <div id="screen-story" class="screen">
+    <img id="bg-img" class="background" src="">
+    <h2 id="scene-title"></h2>
+    <p id="prompt-text"></p>
+
+    <audio id="player" controls></audio>
+
+    <div id="choices"></div>
+
+    <button id="btn-back-cover">Zurück zum Cover</button>
   </div>
 
   <script src="script.js"></script>
