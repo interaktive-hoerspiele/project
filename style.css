@@ -15,7 +15,7 @@ body {
   display: block;
 }
 
-.cover-image {
+#cover-img {
   width: 80%;
   max-width: 300px;
   margin-top: 40px;
@@ -41,7 +41,7 @@ button:hover {
   max-width: 300px;
 }
 
-.background {
+#bg-img {
   width: 100%;
   max-height: 40vh;
   object-fit: cover;
