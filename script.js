@@ -2,6 +2,7 @@ let storyData = null;
 let currentStory = null;
 let currentSceneId = null;
 let sceneHistory = [];
+let isGoingBack = false;
 
 const screenCover = document.getElementById("screen-cover");
 const screenSelect = document.getElementById("screen-select");
@@ -66,9 +67,13 @@ function loadScene(sceneId) {
   const scene = currentStory.scenes[sceneId];
   if (!scene) return;
 
-  if (currentSceneId) {
+  // Nur pushen, wenn wir NICHT zurückgehen
+  if (!isGoingBack && currentSceneId) {
     sceneHistory.push(currentSceneId);
   }
+
+  // Back-Flag zurücksetzen
+  isGoingBack = false;
 
   currentSceneId = sceneId;
 
@@ -130,12 +135,15 @@ function showEnding(scene) {
   btnRestart.textContent = "Zurück zur Auswahl";
   btnRestart.onclick = () => {
     stopAudio();
+    sceneHistory = [];
     showScreen(screenSelect);
   };
   choicesContainer.appendChild(btnRestart);
 
   choicesContainer.style.display = "block";
 }
+
+// --- BUTTON LOGIK ---
 
 btnStart.addEventListener("click", () => {
   stopAudio();
@@ -151,9 +159,11 @@ btnBackOne.addEventListener("click", () => {
   stopAudio();
 
   if (sceneHistory.length > 0) {
+    isGoingBack = true;
     const previous = sceneHistory.pop();
     loadScene(previous);
   } else {
+    // Keine History mehr → zurück zur Auswahl
     showScreen(screenSelect);
   }
 });
