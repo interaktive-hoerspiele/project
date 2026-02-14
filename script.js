@@ -9,8 +9,6 @@ const screenStory = document.getElementById("screen-story");
 
 const btnStart = document.getElementById("btn-start");
 const btnBackCover = document.getElementById("btn-back-cover");
-const btnBackCover2 = document.getElementById("btn-back-cover2");
-const btnBackSelect = document.getElementById("btn-back-select");
 const btnBackOne = document.getElementById("btn-back-one");
 
 const coverImg = document.getElementById("cover-img");
@@ -129,10 +127,10 @@ function showEnding(scene) {
   choicesContainer.appendChild(endText);
 
   const btnRestart = document.createElement("button");
-  btnRestart.textContent = "Zurück zum Start";
+  btnRestart.textContent = "Zurück zur Auswahl";
   btnRestart.onclick = () => {
     stopAudio();
-    showScreen(screenCover);
+    showScreen(screenSelect);
   };
   choicesContainer.appendChild(btnRestart);
 
@@ -149,22 +147,14 @@ btnBackCover.addEventListener("click", () => {
   showScreen(screenCover);
 });
 
-btnBackCover2.addEventListener("click", () => {
-  stopAudio();
-  showScreen(screenCover);
-});
-
-btnBackSelect.addEventListener("click", () => {
-  stopAudio();
-  sceneHistory = [];
-  showScreen(screenSelect);
-});
-
 btnBackOne.addEventListener("click", () => {
   stopAudio();
+
   if (sceneHistory.length > 0) {
     const previous = sceneHistory.pop();
     loadScene(previous);
+  } else {
+    showScreen(screenSelect);
   }
 });
 
