@@ -53,7 +53,7 @@
         },
 
         "AB": {
-          "type": "decision",
+          "type": "ending",
           "title": "Du versuchst, den Täter zu überwältigen.",
           "background": "images/bg.jpg",
           "narration": "audio/AB.mp3"
