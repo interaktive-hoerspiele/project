@@ -56,7 +56,7 @@
           "type": "decision",
           "title": "Du versuchst, den Täter zu überwältigen.",
           "background": "images/bg.jpg",
-          "narration": "audio/AB.mp3",
+          "narration": "audio/AB.mp3"
         },
 
         "BA": {
