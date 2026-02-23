@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Interaktives Hörspiel",
+    "title": "Hörspiel zum Mitmachen. Triff Entscheidungen und beeinfluss die Story.",
     "cover_image": "images/cover.jpg",
     "default_background": "images/bg.jpg"
   },
