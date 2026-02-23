@@ -47,7 +47,7 @@
           "title": "Du wartest ab und hörst zu.",
           "background": "images/bg.jpg",
           "narration": "audio/AA.mp3",
-          "prompt": "2. Entscheidung - Strang A-A",
+          "prompt": "Was machst du?",
           "choice_a": { "label": "Daniel draußen in Sicherheit bringen", "next": "AAA" },
           "choice_b": { "label": "Daniel nach draußen schicken und einen Weg zur Frau suchen", "next": "AAB" }
         },
@@ -81,20 +81,16 @@
 
         "AAA": {
           "type": "ending",
-          "title": "Strang A-A-A",
+          "title": "Du bringst Daniel draußen in Sicherheit.",
           "background": "images/bg.jpg",
-          "narration": "audio/AAA_end.mp3",
-          "ending_title": "Daniel draußen in Sicherheit bringen",
-          "ending_text": "StorylineEnde"
+          "narration": "audio/AAA_end.mp3"
         },
 
         "AAB": {
           "type": "ending",
-          "title": "Strang A-A-B",
+          "title": "Du schickst Daniel nach draußen und suchst einen Weg zur Frau.",
           "background": "images/bg.jpg",
           "narration": "audio/AAB_end.mp3",
-          "ending_title": "Daniel nach draußen schicken und einen Weg zur Frau suchen",
-          "ending_text": "StorylineEnde"
         },
 
         "BAA": {
