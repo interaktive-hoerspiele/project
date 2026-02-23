@@ -24,7 +24,7 @@
 
         "A": {
           "type": "decision",
-          "title": "Strang A",
+          "title": "Du bist nach links gegangen.",
           "background": "images/bg.jpg",
           "narration": "audio/A.mp3",
           "prompt": "Was machst du?",
@@ -34,7 +34,7 @@
 
         "B": {
           "type": "decision",
-          "title": "Strang B",
+          "title": "Du bist nach rechts gegangen.",
           "background": "images/bg.jpg",
           "narration": "audio/B.mp3",
           "prompt": "NOCH NICHT DA",
@@ -44,7 +44,7 @@
 
         "AA": {
           "type": "decision",
-          "title": "Strang A-A",
+          "title": "Du wartest ab und hörst zu.",
           "background": "images/bg.jpg",
           "narration": "audio/AA.mp3",
           "prompt": "2. Entscheidung - Strang A-A",
@@ -54,7 +54,7 @@
 
         "AB": {
           "type": "decision",
-          "title": "Strang A-B",
+          "title": "Du versuchst, den Täter zu überwältigen.",
           "background": "images/bg.jpg",
           "narration": "audio/AB.mp3",
           "prompt": "Was machst du?",
@@ -97,24 +97,6 @@
           "background": "images/bg.jpg",
           "narration": "audio/AAB_end.mp3",
           "ending_title": "Daniel nach draußen schicken und einen Weg zur Frau suchen",
-          "ending_text": "StorylineEnde"
-        },
-
-        "ABA": {
-          "type": "ending",
-          "title": "Strang A-B-A",
-          "background": "images/bg.jpg",
-          "narration": "audio/ABA_end.mp3",
-          "ending_title": "Strang A-B-A",
-          "ending_text": "StorylineEnde"
-        },
-
-        "ABB": {
-          "type": "ending",
-          "title": "Strang A-B-B",
-          "background": "images/bg.jpg",
-          "narration": "audio/ABB_end.mp3",
-          "ending_title": "Strang A-B-B",
           "ending_text": "StorylineEnde"
         },
 
