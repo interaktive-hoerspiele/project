@@ -48,8 +48,8 @@
           "background": "images/bg.jpg",
           "narration": "audio/AA.mp3",
           "prompt": "2. Entscheidung - Strang A-A",
-          "choice_a": { "label": "Möglichkeit A", "next": "AAA" },
-          "choice_b": { "label": "Möglichkeit B", "next": "AAB" }
+          "choice_a": { "label": "Daniel draußen in Sicherheit bringen", "next": "AAA" },
+          "choice_b": { "label": "Daniel nach draußen schicken und einen Weg zur Frau suchen", "next": "AAB" }
         },
 
         "AB": {
@@ -57,9 +57,6 @@
           "title": "Du versuchst, den Täter zu überwältigen.",
           "background": "images/bg.jpg",
           "narration": "audio/AB.mp3",
-          "prompt": "Was machst du?",
-          "choice_a": { "label": "Daniel draußen in Sicherheit bringen", "next": "ABA" },
-          "choice_b": { "label": "Daniel nach draußen schicken und einen Weg zur Frau suchen", "next": "ABB" }
         },
 
         "BA": {
