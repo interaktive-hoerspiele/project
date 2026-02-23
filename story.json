@@ -90,7 +90,7 @@
           "type": "ending",
           "title": "Du schickst Daniel nach draußen und suchst einen Weg zur Frau.",
           "background": "images/bg.jpg",
-          "narration": "audio/AAB_end.mp3",
+          "narration": "audio/AAB_end.mp3"
         },
 
         "BAA": {
