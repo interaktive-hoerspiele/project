@@ -93,7 +93,7 @@ function loadScene(sceneId) {
 
   if (scene.type === "ending") {
     player.onended = () => {
-      promptText.textContent = scene.ending_title;
+     promptText.textContent = scene.ending_title || "";
       showEnding(scene);
     };
   }
@@ -117,9 +117,11 @@ function showChoices(scene) {
 function showEnding(scene) {
   choicesContainer.innerHTML = "";
 
-  const endText = document.createElement("p");
-  endText.textContent = scene.ending_text;
-  choicesContainer.appendChild(endText);
+  if (scene.ending_text) {
+    const endText = document.createElement("p");
+    endText.textContent = scene.ending_text;
+    choicesContainer.appendChild(endText);
+  }
 
   const btnRestart = document.createElement("button");
   btnRestart.textContent = "Zurück zur Auswahl";
@@ -128,6 +130,7 @@ function showEnding(scene) {
     sceneHistory = [];
     showScreen(screenSelect);
   };
+
   choicesContainer.appendChild(btnRestart);
 }
 
