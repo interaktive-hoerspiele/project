@@ -17,9 +17,9 @@
           "title": "Einleitung",
           "background": "images/bg.jpg",
           "narration": "audio/intro.mp3",
-          "prompt": "Einleitung in die Story. Wie willst du vorgehen?",
-          "choice_a": { "label": "Möglichkeit A", "next": "A" },
-          "choice_b": { "label": "Möglichkeit B", "next": "B" }
+          "prompt": "Wo gehst du lang?",
+          "choice_a": { "label": "Nach Links", "next": "A" },
+          "choice_b": { "label": "Nach Rechts", "next": "B" }
         },
 
         "A": {
@@ -27,9 +27,9 @@
           "title": "Strang A",
           "background": "images/bg.jpg",
           "narration": "audio/A.mp3",
-          "prompt": "Entscheidung: Möglichkeit A",
-          "choice_a": { "label": "Möglichkeit A", "next": "AA" },
-          "choice_b": { "label": "Möglichkeit B", "next": "AB" }
+          "prompt": "Was machst du?",
+          "choice_a": { "label": "Abwarten und zuhören", "next": "AA" },
+          "choice_b": { "label": "Versuchen, den Täter zu überwältigen", "next": "AB" }
         },
 
         "B": {
@@ -37,7 +37,7 @@
           "title": "Strang B",
           "background": "images/bg.jpg",
           "narration": "audio/B.mp3",
-          "prompt": "Entscheidung: Möglichkeit B",
+          "prompt": "NOCH NICHT DA",
           "choice_a": { "label": "Möglichkeit A", "next": "BA" },
           "choice_b": { "label": "Möglichkeit B", "next": "BB" }
         },
@@ -57,9 +57,9 @@
           "title": "Strang A-B",
           "background": "images/bg.jpg",
           "narration": "audio/AB.mp3",
-          "prompt": "2. Entscheidung - Strang A-B",
-          "choice_a": { "label": "Möglichkeit A", "next": "ABA" },
-          "choice_b": { "label": "Möglichkeit B", "next": "ABB" }
+          "prompt": "Was machst du?",
+          "choice_a": { "label": "Daniel draußen in Sicherheit bringen", "next": "ABA" },
+          "choice_b": { "label": "Daniel nach draußen schicken und einen Weg zur Frau suchen", "next": "ABB" }
         },
 
         "BA": {
@@ -87,7 +87,7 @@
           "title": "Strang A-A-A",
           "background": "images/bg.jpg",
           "narration": "audio/AAA_end.mp3",
-          "ending_title": "Strang A-A-A",
+          "ending_title": "Daniel draußen in Sicherheit bringen",
           "ending_text": "StorylineEnde"
         },
 
@@ -96,7 +96,7 @@
           "title": "Strang A-A-B",
           "background": "images/bg.jpg",
           "narration": "audio/AAB_end.mp3",
-          "ending_title": "Strang A-A-B",
+          "ending_title": "Daniel nach draußen schicken und einen Weg zur Frau suchen",
           "ending_text": "StorylineEnde"
         },
 
