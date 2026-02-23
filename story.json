@@ -8,13 +8,13 @@
   "stories": [
     {
       "id": "krimi1",
-      "title": "Die letzte Spur",
+      "title": "Einsatz im Waldhotel",
       "start_scene": "intro",
 
       "scenes": {
         "intro": {
           "type": "decision",
-          "title": "Einleitung",
+          "title": "",
           "background": "images/bg.jpg",
           "narration": "audio/intro.mp3",
           "prompt": "Wo gehst du lang?",
